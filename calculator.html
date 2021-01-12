@@ -1,0 +1,40 @@
+
+
+<script>
+    var vars = ["vk", "np", "mst", "ek", "m"]
+    function check() {
+        var values = {}
+        vars.forEach(element => {
+            values[element] = document.getElementById(element).value;
+        });
+        console.log("new values");
+        console.dir(values)
+    }
+    
+    
+    
+</script>
+
+
+Verkaufspreis(€)
+</br>
+<input id=vk required="" type="number" placeholder="Verkaufspreis in €" oninput="check()"> €
+</br>
+Nettopreis(€)
+</br>
+<input id=np required="" type="number" placeholder="Nettopreis in €" oninput="check()"> €
+</br>
+Mehrwertsteuer(%)
+</br>
+<input id=mst required="" type="number" placeholder="Mehrwertsteuer in Prozent" min="0" oninput="check()"> %
+</br>
+Einkaufspreis(€)
+</br>
+<input id=ek required="" type="number" placeholder="Einkaufspreis in €" oninput="check()"> €
+</br>
+Marge Verkäufer(%)
+</br>
+<input id=m required="" type="number" placeholder="Marge in %" min="0" oninput="check()"> €
+
+<!-- mst, ek, vk depend on each other - if I have two the third must be calculated -->
+<!-- https://mathjs.org/docs/reference/functions/usolve.html  --  could help solving shit otherwise just do it by hand before for the 5 cases -->
