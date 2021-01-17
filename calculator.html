@@ -1,40 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="calculator.js"></script>
+
+</head>
+
+<body>
+    <div class="label"><label for="vk">Verkaufspreis(€)</label><br></div>
+    <div class="container">
+        <input id=vk required="" type="number" placeholder="Verkaufspreis in €" value="12" oninput="check()"> €
+        <span class="lock" id="lock-vk" onClick="toggleLock(this.id)"></span>
+    </div>
+    <div class="label"><label for="np">Nettopreis(€)</label><br></div>
+    <div class="container">
+        <input id=np required="" type="number" placeholder="Nettopreis in €" oninput="check()"> €
+        <span class="lock" id="lock-np" onClick="toggleLock(this.id)"></span>
+    </div>
+    <div class="label"><label for="mst">Mehrwertsteuer(%)</label><br></div>
+    <div class="container">
+        <input id=mst required="" type="number" placeholder="Mehrwertsteuer in Prozent" min="0" oninput="check()"
+            value="19"> %
+        <span class="lock" id="lock-mst" onClick="toggleLock(this.id)"></span>
+    </div>
+    <div class="label"><label for="ek">Einkaufspreis(€)</label><br></div>
+    <div class="container">
+        <input id=ek required="" type="number" placeholder="Einkaufspreis in €" oninput="check()"> €
+        <span class="lock" id="lock-ek" onClick="toggleLock(this.id)"></span>
+    </div>
+    <div class="label"><label for="m">Marge Verkäufer(%)</label><br></div>
+    <div class="container">
+        <input id=m required="" type="number" placeholder="Marge in %" min="0" value="45" oninput="check()"> %
+        <span class="lock" id="lock-m" onClick="toggleLock(this.id)"></span>
+    </div>
 
 
-<script>
-    var vars = ["vk", "np", "mst", "ek", "m"]
-    function check() {
-        var values = {}
-        vars.forEach(element => {
-            values[element] = document.getElementById(element).value;
-        });
-        console.log("new values");
-        console.dir(values)
-    }
-    
-    
-    
-</script>
+    <!-- mst, ek, vk depend on each other - if I have two the third must be calculated -->
+    <!-- https://mathjs.org/docs/reference/functions/usolve.html  --  could help solving shit otherwise just do it by hand before for the 5 cases -->
 
+</body>
 
-Verkaufspreis(€)
-</br>
-<input id=vk required="" type="number" placeholder="Verkaufspreis in €" oninput="check()"> €
-</br>
-Nettopreis(€)
-</br>
-<input id=np required="" type="number" placeholder="Nettopreis in €" oninput="check()"> €
-</br>
-Mehrwertsteuer(%)
-</br>
-<input id=mst required="" type="number" placeholder="Mehrwertsteuer in Prozent" min="0" oninput="check()"> %
-</br>
-Einkaufspreis(€)
-</br>
-<input id=ek required="" type="number" placeholder="Einkaufspreis in €" oninput="check()"> €
-</br>
-Marge Verkäufer(%)
-</br>
-<input id=m required="" type="number" placeholder="Marge in %" min="0" oninput="check()"> €
-
-<!-- mst, ek, vk depend on each other - if I have two the third must be calculated -->
-<!-- https://mathjs.org/docs/reference/functions/usolve.html  --  could help solving shit otherwise just do it by hand before for the 5 cases -->
+</html>
