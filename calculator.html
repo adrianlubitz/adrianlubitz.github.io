@@ -9,37 +9,49 @@
 </head>
 
 <body>
-    <div class="label"><label for="vk">Verkaufspreis(€)</label><br></div>
+    <div class="resizable"></div>
     <div class="container">
-        <input id=vk required="" type="number" placeholder="Verkaufspreis in €" value="12" oninput="check()"> €
-        <span class="lock unlocked" id="lock-vk" onClick="toggleLock(this.id)"></span>
+        <div class="resizable"><label for="vk">Verkaufspreis(€)</label></div>
+        <div class="lockbox">
+            <input class="resizable" id=vk required="" type="number" placeholder="Verkaufspreis in €" value="12"
+                oninput="check()"> €
+            <span class="lock unlocked" id="lock-vk" onClick="toggleLock(this.id)"></span>
+        </div>
     </div>
-    <!-- <div class="label"><label for="np">Nettopreis(€)</label><br></div>
-    <div class="container">
-        <input id=np required="" type="number" placeholder="Nettopreis in €" oninput="check()"> €
-        <span class="lock" id="lock-np" onClick="toggleLock(this.id)"></span>
-    </div> -->
-    <div class="label"><label for="mst">Mehrwertsteuer(%)</label><br></div>
-    <div class="container">
-        <input id=mst required="" type="number" placeholder="Mehrwertsteuer in Prozent" min="0" oninput="check()"
-            value="19"> %
-        <span class="lock unlocked" id="lock-mst" onClick="toggleLock(this.id)"></span>
-    </div>
-    <div class="label"><label for="ek">Einkaufspreis(€)</label><br></div>
-    <div class="container">
-        <input id=ek required="" type="number" placeholder="Einkaufspreis in €" oninput="check()" readonly> €
-        <span class="lock" id="lock-ek" onClick="toggleLock(this.id)"></span>
-    </div>
-    <div class="label"><label for="m">Marge Verkäufer(%)</label><br></div>
-    <div class="container">
-        <input id=m required="" type="number" placeholder="Marge in %" min="0" value="45" oninput="check()"> %
-        <span class="lock unlocked" id="lock-m" onClick="toggleLock(this.id)"></span>
     </div>
 
+    <div class="resizable"></div>
+    <div class="container">
+        <div class="resizable"><label for="mst">Mehrwertsteuer(%)</label></div>
+        <div class="lockbox">
+            <input class="resizable" id=mst required="" type="number" placeholder="Mehrwertsteuer in Prozent" min="0"
+                oninput="check()" value="19"> %
+            <span class="lock unlocked" id="lock-mst" onClick="toggleLock(this.id)"></span>
+        </div>
+    </div>
+    </div>
 
-    <!-- mst, ek, vk depend on each other - if I have two the third must be calculated -->
-    <!-- https://mathjs.org/docs/reference/functions/usolve.html  --  could help solving shit otherwise just do it by hand before for the 5 cases -->
+    <div class="resizable"></div>
+    <div class="container">
+        <div class="resizable"><label for="ek">Einkaufspreis(€)</label></div>
+        <div class="lockbox">
+            <input class="resizable" id=ek required="" type="number" placeholder="Einkaufspreis in €" oninput="check()"
+                readonly> €
+            <span class="lock" id="lock-ek" onClick="toggleLock(this.id)"></span>
+        </div>
+    </div>
+    </div>
 
+    <div class="resizable"></div>
+    <div class="container">
+        <div class="resizable"><label for="m">Marge Verkäufer(%)</label></div>
+        <div class="lockbox">
+            <input class="resizable" id=m required="" type="number" placeholder="Marge in %" min="0" value="45"
+                oninput="check()"> %
+            <span class="lock unlocked" id="lock-m" onClick="toggleLock(this.id)"></span>
+        </div>
+    </div>
+    </div>
 
     <script>
         check()
