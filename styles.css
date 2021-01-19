@@ -7,16 +7,30 @@
   --unlocked-color: #5fadbf;
 }
 .container {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+}
+
+.lockbox{
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 40px;
 }
-.label{
+
+.resizable{
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 30px;
+  /* font-size:4vw; */
+}
+
+input, label {
+  /* display:block; */
+  font-size:4vh;
 }
 /* :::::::::::::: Required CSS */
 /* Locked */
@@ -91,3 +105,17 @@
   bottom: 124%;
   transform: rotate(-30deg);
 }
+
+/* @media screen and (min-width: 601px) {
+  label{
+    font-size: 80px;
+  }
+  input{font-size: 80px;}
+}
+
+@media screen and (max-width: 600px) {
+  label{
+    font-size: 30px;
+  }
+  input{font-size: 80px;}
+} */
